@@ -28,7 +28,7 @@ function invocarMetodo(objeto, metodo) {
   // Invoca ese método
   // No necesita un 'return'
   // Tu código:
-  objeto[`${metodo}`];
+  objeto[metodo]();
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
@@ -63,12 +63,7 @@ function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  if (usuario.email == null){
-    return false;
-  }
-  else {
-    return true;
-  }
+  return usuario.email != undefined;
 }
 
 function tienePropiedad(objeto, propiedad) {
@@ -76,6 +71,12 @@ function tienePropiedad(objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
+  if (objeto[`${propiedad}`]== undefined){
+    return false;
+  }
+  else{
+    return true;
+  }
 }
 
 function verificarPassword(usuario, password) {
@@ -83,12 +84,7 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
-  if (password === usuario.password){
-    return true;
-  }
-  else {
-    return false;
-  }
+return usuario.password === password;
 }
 
 function actualizarPassword(usuario, nuevaPassword) {
