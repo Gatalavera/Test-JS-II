@@ -53,15 +53,15 @@ function agregarStringInvertida() {
       this.nombre = nombre,
       this.apellido = apellido,
       this.edad = edad,
-      this.domicilio = domicilio
+      this.domicilio = domicilio,
       this.detalle = function(){
-        let datazo = {
+        let data = {
           Nombre: Persona.nombre,
           Apellido: Persona.apellido,
           Edad: Persona.edad,
           Domicilio: Persona.domicilio
         }
-        return datazo;
+        return data;
       }
     }
 }
@@ -73,15 +73,11 @@ function crearInstanciaPersona(nombre, apellido, edad, dir) {
   let user = new Persona("Juan","Perez",22,"Saavedra 123");
   return user;
 }
-  
 function agregarMetodo() {
   //La función agrega un método "datos" a la clase Persona que toma el nombre y la edad de la persona y devuelve: 
   //Ej: "Juan, 22 años"
-  this.datos = function (){ return Persona.nombre + ", " + Persona.edad + " años";}
-    
+   Persona.prototype.datos = function(){ return this.nombre + ", " + this.edad + " años";}
 }
-  
-
 // No modificar nada debajo de esta línea, sino no correrán los test!
 // --------------------------------
 
